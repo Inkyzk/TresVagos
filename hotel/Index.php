@@ -12,13 +12,43 @@
         <?php 
           session_start();
           include('conexion.php');
-          $sql= "SELECT * FROM habitaciones";
-          $resultado= mysqli_query($con, $sql);
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB1'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es1=$row['estado'];
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB2'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es2=$row['estado'];
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB3'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es3=$row['estado'];
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB4'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es4=$row['estado'];
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB5'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es5=$row['estado'];
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB6'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es6=$row['estado'];
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB7'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es7=$row['estado'];
+          $sql= "SELECT estado FROM habitaciones WHERE nro_habitacion='HAB8'";
+          $res= mysqli_query($con, $sql);
+          $row=mysqli_fetch_assoc($res);
+          $es8=$row['estado'];
          ?>
-        <td class="hab" data-estado='0' data-nro="HAB1" align="center"><p>Habitación 1</td>
-        <td class="hab" data-estado='0' data-nro="HAB2" align="center"><p>Habitación 2</td>
-        <td class="hab" data-estado='0' data-nro="HAB3" align="center"><p>Habitación 3</td>
-        <td class="hab" data-estado='0' data-nro="HAB4" align="center"><p>Habitación 4</td>
+        <td class="hab" data-estado='<?php echo $es1; ?>' data-nro="HAB1" align="center"><p>Habitación 1</td>
+        <td class="hab" data-estado='<?php echo $es2; ?>' data-nro="HAB2" align="center"><p>Habitación 2</td>
+        <td class="hab" data-estado='<?php echo $es3; ?>' data-nro="HAB3" align="center"><p>Habitación 3</td>
+        <td class="hab" data-estado='<?php echo $es4; ?>' data-nro="HAB4" align="center"><p>Habitación 4</td>
       </tr>
       <tr>
         <td align="center"><p>Facturación</p></td>
@@ -30,10 +60,10 @@
     <br>
 <table width="50%" border="black" align="center">
       <tr>
-        <td class="hab" data-estado='0' data-nro="HAB5" align="center"><p>Habitación 5</td>
-        <td class="hab" data-estado='0' data-nro="HAB6"  align="center"><p>Habitación 6</td>
-        <td class="hab" data-estado='0' data-nro="HAB7" align="center"><p>Habitación 7</td>
-        <td class="hab" data-estado='0' data-nro="HAB8" align="center"><p>Habitación 8</td>
+        <td class="hab" data-estado='<?php echo $es5; ?>' data-nro="HAB5" align="center"><p>Habitación 5</td>
+        <td class="hab" data-estado='<?php echo $es6; ?>' data-nro="HAB6"  align="center"><p>Habitación 6</td>
+        <td class="hab" data-estado='<?php echo $es7; ?>' data-nro="HAB7" align="center"><p>Habitación 7</td>
+        <td class="hab" data-estado='<?php echo $es8; ?>' data-nro="HAB8" align="center"><p>Habitación 8</td>
       </tr>
       <tr>
         <td align="center"><p>Facturación</p></td>

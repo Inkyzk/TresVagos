@@ -1,0 +1,38 @@
+<?php
+
+$jsondata = array();
+if( isset($_GET['habitacion']) ) {
+        // con el id que te llega por get, haces e query en la db.
+        $jsondata['estado'] = 1; // 1 o 0, resultado del query.
+    }
+
+    header('Content-type: application/json; charset=utf-8');
+    echo json_encode($jsondata);
+    exit();
+}
+
+y en javascript
+$.ajax({
+  url: "habitacione.php?habitacion=1",
+  context: document.body
+}).done(function() {
+  $( this ).addClass( "done" );
+});
+
+$.ajax({
+    // En data puedes utilizar un objeto JSON, un array o un query string
+    data: {"habitacion" : 10}, // numero de habitacion.
+    type: "GET",
+    dataType: "json",
+    url: "habitacion.php",
+})
+ .done(function( data, textStatus, jqXHR ) {
+   //si salio todo bien, data tiene el dato de si esta ocupado o no
+    // llamas a tu funcion, o pones aca el código para pintar
+console.log(" el resultado es: ", data)
+ })
+ .fail(function( jqXHR, textStatus, errorThrown ) {
+    
+         console.log( "FALLO!!!: " +  textStatus);
+    
+});
